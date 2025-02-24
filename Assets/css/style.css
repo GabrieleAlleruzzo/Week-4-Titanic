@@ -1,43 +1,121 @@
-#timer {
-  font-family: "Outfit", sans-serif;
-  padding: 20px;
-  height: 200px;
-  width: 200px;
-  border-radius: 50%;
-
-  background-image: url("/Assets/mockup/bg.jpg");
-  background-size: cover;
-  background-position: center;
+.donut {
   position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.donut-default {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.donut-white {
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  background: #fff;
+  top: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.donut-line {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.donut-text {
+  top: 25px;
+  left: 25px;
+  width: 150px;
+  height: 150px;
+  background-image: url(/Assets/mockup/bg.jpg);
+  position: absolute;
+  border-radius: 50%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  text-align: center;
-  overflow: hidden;
-  border: 10px solid rgb(191, 124, 203);
+
+  z-index: 3;
 }
 
-.pText {
-  color: white;
-  font-size: 15px;
+.donut-text span {
+  color: #ffffff;
+  font-family: "Outfit", sans-serif;
+  font-size: 12px;
+  color: #ffffff;
 }
-
-.number {
-  color: white;
-  font-size: 30px;
+.donut-text .number {
+  font-size: 50px !important;
+  font-family: "Outfit", sans-serif;
   font-weight: bold;
-  margin: 30px 0;
+  line-height: 1.1;
 }
 
-.barTimer {
+.instalment3 .donut-case {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #b1139f;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-clip: border-box;
+  overflow: hidden;
+}
+
+.instalment3 .donut-case::before {
+  content: "";
+  clip: rect(0 100px 200px 0);
+  -webkit-transform: rotate(327.6deg);
+  transform: rotate(180deg);
+  background: #e17bc1;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  border-radius: 50%;
-  border: 10px solid transparent;
-  background: conic-gradient(#d20094 0% 50%, #00ffff 50% 100%);
-  z-index: -1;
+}
+
+.instalment3 .donut-case::after {
+  content: "";
+  clip: rect(0 100px 200px 0);
+  -webkit-transform: rotate(327.6deg);
+  transform: rotate(270deg);
+  background: #e0b5d3;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.instalment3 .donut-line::before {
+  content: "";
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  background: #fff;
+  z-index: 2;
+}
+
+.instalment3 .donut-line::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  left: -25px;
+  background: #fff;
+  border-bottom: 1px solid #fff;
+  z-index: 2;
 }
