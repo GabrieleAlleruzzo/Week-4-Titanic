@@ -1,0 +1,48 @@
+.welcome {
+  margin-left: 1em;
+  padding-left: 1em;
+  margin-top: 0;
+  padding-top: 0;
+  display: block;
+}
+.logo-welcome {
+  max-width: 10%;
+  height: auto;
+}
+header {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+header h1 {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+h3 {
+  color: #d20094;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+p {
+  margin: 0;
+}
+ul {
+  margin-top: 50px;
+  padding-left: 20px;
+}
+
+footer {
+  margin-top: 100px;
+  margin-left: 16px;
+  padding-left: 16px;
+}
+button {
+  margin-left: 200px;
+  background-color: #00ffff;
+  border: none;
+  padding: 10px;
+  padding-left: 40px;
+  padding-right: 40px;
+  font-weight: bold;
+  font-size: 20px;
+  box-shadow: 0 0 20px 5px #00ffff;
+}

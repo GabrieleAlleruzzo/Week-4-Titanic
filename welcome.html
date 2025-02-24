@@ -3,7 +3,51 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Welcome</title>
+    <link rel="stylesheet" href="./Assets/css/style.css" />
+    <link rel="stylesheet" href="./Assets/css/welcome.css" />
   </head>
-  <body></body>
+  <body>
+    <header>
+      <img
+        class="logo-welcome"
+        src="./Assets/css/epicode_logo.png"
+        alt="Logo Epicode "
+      />
+      <h1>
+        Welcome to <br />
+        <strong>your exam</strong>
+      </h1>
+    </header>
+    <main class="welcome">
+      <div>
+        <h3>Instuction</h3>
+        <p>
+          We don't expect most engineers to know the answers to all of these
+        </p>
+        <p>question, so don't worry if you're unsure of a few of them.</p>
+      </div>
+      <div>
+        <ul>
+          <li>
+            Each question is <strong>timed</strong> and can only be
+            <strong>answered once</strong>.
+          </li>
+          <li>
+            Changing browser tab or opening other windows will
+            <strong>invalidate the question</strong>.
+          </li>
+          <li>This exam will take approx.<strong>0-5 minutes</strong>.</li>
+        </ul>
+      </div>
+    </main>
+    <footer>
+      <input type="checkbox" id="check" /> I promise to answer myself without
+      help from anyone
+      <a id="linkPagina" href="./test.html"
+        ><button type="button">PROCEED</button></a
+      >
+    </footer>
+    <script src="./Assets/js/welcome.js"></script>
+  </body>
 </html>
