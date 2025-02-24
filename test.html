@@ -3,10 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="Assets/css/style.css" />
+    <title>Pagina quiz</title>
   </head>
   <body>
-    <header>
+    <header id="quizHeader">
       <div>
         <img
           src="./Assets/mockup/epicode_logo.png"
@@ -14,7 +15,11 @@
           id="logo"
         />
       </div>
-      <div id="timer"></div>
+      <div id="timer">
+        <p class="pText">SECONDS</p>
+        <p class="number"></p>
+        <p class="pText">REMAINING</p>
+      </div>
     </header>
     <main>
       <section id="question">
