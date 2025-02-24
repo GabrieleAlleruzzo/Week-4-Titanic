@@ -102,3 +102,7 @@ const questions = [
     incorrect_answers: ["a. Barbie", "b.Domino", "d. Polly Pocket"],
   },
 ];
+
+const answerSec = document.getElementById("answers");
+
+const h2Question = document.getElementById("question");
