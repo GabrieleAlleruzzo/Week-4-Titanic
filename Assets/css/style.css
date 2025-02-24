@@ -118,3 +118,13 @@ ul {
   transform: translateY(0.25em);
   margin-right: 1em;
 }
+
+#check:checked::before {
+  content: "✔";
+  text-align: center;
+  color: #fff;
+  font-size: 0.75em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
