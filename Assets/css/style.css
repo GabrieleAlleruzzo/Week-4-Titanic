@@ -103,3 +103,18 @@ ul {
   height: auto;
   margin-left: 25%;
 }
+
+/* CHECKMARK */
+#check {
+  appearance: none;
+  background-color: #ffffff00;
+  margin: 0;
+  font: inherit;
+  font-weight: bold;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid currentColor;
+  transform: translateY(0.25em);
+  margin-right: 1em;
+}
