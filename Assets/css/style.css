@@ -23,6 +23,11 @@ header {
   display: block;
 }
 
+footer {
+  margin: 5em;
+  padding: 5em;
+}
+
 .center {
   width: 50%;
   display: table;
@@ -63,10 +68,14 @@ li {
   margin: 0.5em;
 }
 
+ul {
+  padding-top: 2em;
+}
+
 /* BOTTONI */
 
 /* IMMAGINI */
-.logo {
+#logo {
   max-width: 10%;
   height: auto;
   margin-left: 25%;
