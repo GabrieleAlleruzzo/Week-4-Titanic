@@ -22,14 +22,6 @@
   z-index: 2;
 }
 
-.donut-line {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
 .donut-text {
   top: 25px;
   left: 25px;
@@ -118,4 +110,14 @@
   background: #fff;
   border-bottom: 1px solid #fff;
   z-index: 2;
+}
+#donut-line {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  background: conic-gradient(#00ffff 0% 100%);
+  transition: background 1s ease;
 }
