@@ -5,21 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome</title>
     <link rel="stylesheet" href="./Assets/css/style.css" />
+    <link rel="stylesheet" href="./Assets/css/welcome.css" />
   </head>
   <body>
     <header>
-      <img src="./Assets/css/epicode_logo.png" alt="Logo Epicode " id="logo" />
-    </header>
-    <main class="center">
+      <img
+        class="logo-welcome"
+        src="./Assets/css/epicode_logo.png"
+        alt="Logo Epicode "
+      />
       <h1>
         Welcome to <br />
         <strong>your exam</strong>
       </h1>
-      <h3>Instuction</h3>
-      <p>
-        We don't expect most engineers to know the answers to all of these
-        question, so don't worry if you're unsure of a few of them.
-      </p>
+    </header>
+    <main class="welcome">
+      <div>
+        <h3>Instuction</h3>
+        <p>
+          We don't expect most engineers to know the answers to all of these
+        </p>
+        <p>question, so don't worry if you're unsure of a few of them.</p>
+      </div>
       <div>
         <ul>
           <li>
@@ -34,12 +41,13 @@
         </ul>
       </div>
     </main>
-    <footer class="center">
-      <input type="checkbox" id="check" />
-      <strong>I promise to answer myself without help from anyone</strong>
+    <footer>
+      <input type="checkbox" id="check" /> I promise to answer myself without
+      help from anyone
       <a id="linkPagina" href="./test.html"
-        ><button type="button" class="blue-button">PROCEED</button></a
+        ><button type="button">PROCEED</button></a
       >
     </footer>
+    <script src="./Assets/js/welcome.js"></script>
   </body>
 </html>
