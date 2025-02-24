@@ -23,6 +23,11 @@ header {
   display: block;
 }
 
+footer {
+  margin: 5em;
+  padding: 5em;
+}
+
 .center {
   width: 50%;
   display: table;
@@ -63,11 +68,53 @@ li {
   margin: 0.5em;
 }
 
+ul {
+  padding-top: 2em;
+}
+
 /* BOTTONI */
 
+.blue-button {
+  background-color: #00ffff;
+  display: inline-block;
+  cursor: pointer;
+
+  color: #070027;
+  font-family: "Outfit", serif;
+  font-weight: 800;
+  font-size: 17px;
+  padding: 1em;
+  margin: 2em;
+
+  width: 200px;
+  height: 50px;
+  padding: 0px;
+  border-color: #00ffff;
+  border: 0px;
+  box-shadow: 0px 10px 20px 0px #00ffff63;
+}
+.blue-button:hover {
+  background-color: #abffff;
+}
+
 /* IMMAGINI */
-.logo {
+#logo {
   max-width: 10%;
   height: auto;
   margin-left: 25%;
+}
+
+/* CHECKMARK */
+#check {
+  appearance: none;
+  background-color: #ffffff00;
+  margin: 0;
+  font: inherit;
+  font-weight: bold;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid currentColor;
+  transform: translateY(0.25em);
+  margin-right: 1em;
 }
