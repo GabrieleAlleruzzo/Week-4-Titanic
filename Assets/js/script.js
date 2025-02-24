@@ -92,3 +92,23 @@ const questions = [
     incorrect_answers: ["a. Barbie", "b.Domino", "d. Polly Pocket"],
   },
 ];
+
+let timeNumber = document.getElementById("timerNumber");
+let seconds = 30;
+
+const circleTimer = () => {
+  if (seconds > 0) {
+    seconds--;
+    timerNumber.textContent = seconds;
+  } else {
+    clearInterval(timerInterval);
+    console.log("Timer finito!");
+    //aggiungere qualcosa del genere per passare a un'altra domanda
+    //questionNumber += 1
+    // removeQuestions()
+  }
+};
+let timerInterval = setInterval(circleTimer, 1000);
+window.onload = function () {
+  circleTimer();
+};
