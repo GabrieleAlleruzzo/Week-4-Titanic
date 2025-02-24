@@ -1,5 +1,6 @@
 const questions = [
   {
+    number: 1,
     category: "Sport: Soccer",
     type: "multiple",
     difficulty: "easy",
@@ -15,6 +16,7 @@ const questions = [
     ],
   },
   {
+    number: 2,
     category: "Geo: Countries",
     type: "multiple",
     difficulty: "easy",
@@ -23,6 +25,7 @@ const questions = [
     incorrect_answers: ["b.Madrid", "c.Siviglia", "d.Venezia"],
   },
   {
+    number: 3,
     category: "Geo: Countries",
     type: "multiple",
     difficulty: "easy",
@@ -31,6 +34,7 @@ const questions = [
     incorrect_answers: ["a.Porto", "b.Salamanca", "d.Berlino"],
   },
   {
+    number: 4,
     category: "Nature: Animals",
     type: "multiple",
     difficulty: "medium",
@@ -39,6 +43,7 @@ const questions = [
     incorrect_answers: ["a. Squalo bianco", "b. Balena", "c. Beluga"],
   },
   {
+    number: 5,
     category: "Art: Music",
     type: "multiple",
     difficulty: "medium",
@@ -48,6 +53,7 @@ const questions = [
   },
 
   {
+    number: 6,
     category: "Histori: Rome",
     type: "multiple",
     difficulty: "medium",
@@ -56,6 +62,7 @@ const questions = [
     incorrect_answers: ["a. Diogene", "c. Nerone", "d. Marco Antonio"],
   },
   {
+    number: 7,
     category: "Science: World",
     type: "multiple",
     difficulty: ",medium",
@@ -66,6 +73,7 @@ const questions = [
   },
 
   {
+    number: 8,
     category: "Art: Music",
     type: "multiple",
     difficulty: "easy",
@@ -74,6 +82,7 @@ const questions = [
     incorrect_answers: ["a.Marcella Bella", "b.Topo Gigio", "d.Lucio Corsi"],
   },
   {
+    number: 9,
     category: "Art: Literature",
     type: "multiple",
     difficulty: "hard",
@@ -83,6 +92,7 @@ const questions = [
     incorrect_answers: ["a. Marie", "c. Julie", "d. Héloïse"],
   },
   {
+    number: 10,
     category: "Hobbies: Toys",
     type: "multiple",
     difficulty: "hard",
