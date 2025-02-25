@@ -4,10 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./Assets/css/style.css" />
   </head>
   <body>
-    <header>
+    <header id="quizHeader">
       <div>
         <img
           src="./Assets/mockup/epicode_logo.png"
@@ -15,7 +14,17 @@
           id="logo"
         />
       </div>
-      <div id="timer"></div>
+
+      <div class="donut instalment3">
+        <div class="donut-default"></div>
+        <div id="donut-line"></div>
+        <div class="donut-text">
+          <span>SECONDS</span>
+          <span class="number" id="timerNumber">30</span>
+          <span>REMAINING</span>
+        </div>
+        <div class="donut-case"></div>
+      </div>
     </header>
     <main class="center">
       <section>
@@ -42,6 +51,5 @@
         <span id="totalQuestions"> /10</span>
       </p>
     </footer>
-    <script src="./Assets/js/script.js"></script>
   </body>
 </html>

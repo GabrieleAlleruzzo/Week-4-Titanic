@@ -113,6 +113,29 @@ const questions = [
   },
 ];
 
+let timerNumber = document.getElementById("timerNumber");
+let seconds = 30;
+let donutLine = document.getElementById("donut-line");
+let timerInterval;
+const circleTimer = () => {
+  if (seconds > 0) {
+    seconds--;
+    timerNumber.textContent = seconds;
+    let percentage = (seconds / 30) * 100;
+    donutLine.style.background = `conic-gradient(#00ffff 0% ${percentage}%, #e0b5d3 ${percentage}% 100%)`;
+  } else {
+    clearInterval(timerInterval);
+    console.log("Tempo scaduto");
+    donutLine.style.background = "conic-gradient(#e0b5d3 0% 100%)";
+    //aggiungere qualcosa del genere per passare a un'altra domanda
+    //questionNumber += 1
+    // removeQuestions()
+  }
+};
+
+window.onload = function () {
+  timerInterval = setInterval(circleTimer, 1000);
+};
 const ans1 = document.getElementById("ans1");
 const ans2 = document.getElementById("ans2");
 const ans3 = document.getElementById("ans3");
