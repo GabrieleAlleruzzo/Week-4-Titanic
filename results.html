@@ -12,11 +12,47 @@
       <img id="logo" src="./Assets/css/epicode_logo.png" alt="Logo Epicode " />
     </header>
     <main>
-      <h1>Results</h1>
-      <p>The summary of your answers:</p>
-      <h2>Correct</h2>
-      <h2>Wrong</h2>
-      <a href="/review.html"><button class="blue-button">RATE US</button></a>
-    </main>
+      <h1 id="h1-results">Results</h1>
+      <p id="p-results">The summary of your answers:</p>
+      <div id="chart-id">
+        <canvas id="myChart"></canvas>
+      </div>
+      <span id="correct-results">Correct</span> 
+      <span id="wrong-results">Wrong</span>
+      <div id="results-button">
+        <a href="/review.html"><button class="blue-button">RATE US</button></a>
+      </main>
+      </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/Assets/js/script.js"></script>
+
+    <!-- Grafico -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+      const ctx = document.getElementById("myChart");
+
+      new Chart(ctx, {
+        type: "doughnut",
+        data: {
+          datasets: [
+            {
+              label: "# of Votes",
+              data: [12, 19, 3, 5, 2, 3],
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+    </script>
   </body>
 </html>
