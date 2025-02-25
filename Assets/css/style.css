@@ -158,19 +158,13 @@ ul {
   text-align: center;
 }
 
-<<<<<<< Updated upstream
-=======
 .donut {
   position: relative;
   width: 200px;
   height: 200px;
-  background: transparent;
+  background: transparent; /* Il background trasparente per la ciambella */
   border-radius: 50%;
-  mask: radial-gradient(
-    circle,
-    transparent 55%,
-    black 41%
-  ); /* maschera per trasparenza */
+  mask: radial-gradient(circle, transparent 55%, black 41%);
 }
 
 .donut-default {
@@ -184,6 +178,7 @@ ul {
   width: 70%;
   height: 70%;
   border-radius: 50%;
+  background: transparent; /* Colore bianco per il cerchio centrale */
   top: 50%;
   position: absolute;
   left: 50%;
@@ -196,6 +191,7 @@ ul {
   left: 25px;
   width: 150px;
   height: 150px;
+  background-color: transparent; /* Lo sfondo trasparente per il cerchio centrale con i numeri */
   position: absolute;
   border-radius: 50%;
   display: flex;
@@ -229,7 +225,6 @@ ul {
   transition: background 1s ease; /* Aggiunta transizione fluida per il cambiamento dei colori */
 }
 
->>>>>>> Stashed changes
 .timer-container {
   position: fixed;
   top: 20px;
@@ -240,39 +235,7 @@ ul {
   z-index: 10;
 }
 
-@property --a {
-  syntax: "<angle>";
-  inherits: false;
-  initial-value: 360deg;
-}
-
-.container {
-  --a: 360deg;
-  position: relative;
-  width: 10em;
-  height: 10em;
-  border-radius: 50%;
-  transition: --a 1s linear;
-  background: conic-gradient(
-    #00ffff var(--a),
-    #00ffff 0deg,
-    #ffffffd5 0deg,
-    #ffffffd5 360deg
-  );
-  mask: radial-gradient(circle, transparent 50%, black 41%);
-}
-
-.text-container {
-  width: 70%;
-  height: 100px;
-  color: white;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.3em;
-  font-size: 1em;
-  transform: translate(-50%, -50%);
+/* Aggiunta della classe per il timer sotto i 10 secondi */
+.timer-danger {
+  background: conic-gradient(#ff0000 0% 100%, #e0b5d3 0% 100%);
 }
