@@ -113,33 +113,39 @@ const questions = [
   },
 ];
 
-let timerNumber = document.getElementById("timerNumber");
-let seconds = 30;
-let donutLine = document.getElementById("donut-line");
-let timerInterval;
+// TIMER
 
-const circleTimer = () => {
-  if (seconds > 0) {
-    seconds--;
-    timerNumber.textContent = seconds;
-    let percentage = (seconds / 30) * 100;
+let container = document.querySelector(".container");
+let sec = document.querySelector(".sec");
+let min = document.querySelector(".min");
+let num = 360;
 
-    // Cambia il colore del timer quando scende sotto i 10 secondi
-    if (seconds < 10) {
-      donutLine.style.background = `conic-gradient(#ff0000 0% ${percentage}%, #e0b5d3 ${percentage}% 100%)`;
+const minute = 1;
+let duration = minute * 60;
+
+let interval = setInterval(() => {
+  if (duration >= 0) {
+    min.textContent = `0${Math.floor(duration / 60)}`;
+    if (duration % 60 < 10) {
+      sec.textContent = `0${duration % 60}`;
     } else {
-      donutLine.style.background = `conic-gradient(#00ffff 0% ${percentage}%, #e0b5d3 ${percentage}% 100%)`;
+      sec.textContent = `${duration % 60}`;
     }
-  } else {
-    clearInterval(timerInterval);
-    console.log("Tempo scaduto");
-    donutLine.style.background = "conic-gradient(#e0b5d3 0% 100%)";
-  }
-};
 
-window.onload = function () {
-  timerInterval = setInterval(circleTimer, 1000);
-};
+    container.style.setProperty("--a", num + "deg");
+
+    const a = container.style.getPropertyValue("--a");
+    console.log(a);
+
+    container.style.background = ` conic-gradient(#00ffff var(--a) ,#00ffff 0deg ,#ffffffd5 0deg,#ffffffd5 360deg)`;
+    num = num - num / duration;
+    duration--;
+  } else {
+    clearInterval(interval);
+  }
+}, 1000);
+
+// END TIMER
 
 const ans1 = document.getElementById("ans1");
 const ans2 = document.getElementById("ans2");
