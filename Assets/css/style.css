@@ -251,6 +251,9 @@ i {
 i:hover {
   color: #00ffff;
 }
+ .hover{
+  color: #00ffff;
+}
 
 /*main allineato al centro + larghezza massima */
 main {
