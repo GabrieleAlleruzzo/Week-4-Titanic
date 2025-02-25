@@ -5,18 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/Assets/css/style.css" />
     <link rel="stylesheet" href="/Assets/css/welcome.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <title>Document</title>
   </head>
   <body>
     <header>
       <img id="logo" src="./Assets/css/epicode_logo.png" alt="Logo Epicode " />
     </header>
-    <main>
-      <h1>Results</h1>
-      <p>The summary of your answers:</p>
-      <h2>Correct</h2>
-      <h2>Wrong</h2>
-      <a href="/review.html"><button class="blue-button">RATE US</button></a>
+    <main class="center">
+      <div>
+        <h1>Results</h1>
+        <p>The summary of your answers:</p>
+      </div>
+      <div>
+        <h2 class="inline">Correct</h2>
+      </div>
+      <div class="graph">
+        <canvas id="myChart" style="width: 100%; max-width: 700px"></canvas>
+      </div>
+      <div>
+        <h2 class="inline">Wrong</h2>
+      </div>
+      <div class="center-center">
+        <a href="/review.html"><button class="blue-button">RATE US</button></a>
+      </div>
     </main>
+
+    <script>
+      var xValues = ["Right", "Wrong"];
+      var yValues = [55, 49];
+      var barColors = ["#d20093a0", "#00ffff"];
+
+      new Chart("myChart", {
+        type: "doughnut",
+        data: {
+          datasets: [
+            {
+              backgroundColor: barColors,
+              data: yValues,
+            },
+          ],
+        },
+        options: {
+          title: {
+            display: true,
+            text: "Results",
+          },
+        },
+      });
+    </script>
   </body>
 </html>
