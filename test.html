@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="./Assets/css/style.css" />
   </head>
   <body>
     <header>
@@ -16,7 +17,7 @@
       </div>
       <div id="timer"></div>
     </header>
-    <main>
+    <main class="center">
       <section>
         <p id="difficulty"></p>
         <p id="category"></p>
@@ -24,23 +25,21 @@
       </section>
       <section id="answers">
         <div>
-          <button><p id="ans1"></p></button>
+          <button class="question"><p id="ans1"></p></button>
+
+          <button class="question"><p id="ans2"></p></button>
         </div>
         <div>
-          <button><p id="ans2"></p></button>
-        </div>
-        <div>
-          <button><p id="ans3"></p></button>
-        </div>
-        <div>
-          <button><p id="ans4"></p></button>
+          <button class="question"><p id="ans3"></p></button>
+
+          <button class="question"><p id="ans4"></p></button>
         </div>
       </section>
     </main>
-    <footer>
+    <footer class="test">
       <p>
-        Question <span id="questionNumber"></span>
-        <span id="totalQuestions">/10</span>
+        Question <span id="questionNumber"> </span>
+        <span id="totalQuestions"> /10</span>
       </p>
     </footer>
     <script src="./Assets/js/script.js"></script>
