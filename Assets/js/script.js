@@ -121,6 +121,11 @@ const h2Question = document.getElementById("question");
 const category = document.getElementById("category");
 const difficulty = document.getElementById("difficulty");
 const questionNumber = document.getElementById("questionNumber");
+const timer = document.getElementById("timer");
+
+const ansTrue = 0;
+
+let currentQuestion = 0;
 
 ans1.innerText = questions[0].correct_answer;
 ans2.innerText = questions[0].incorrect_answers.b;
@@ -134,3 +139,51 @@ category.innerText = questions[0].category;
 h2Question.innerText = questions[0].question;
 
 questionNumber.innerText = questions[0].number;
+
+function updateQuestion(questionIndex) {
+  ans1.innerText = questions[questionIndex].correct_answer;
+  ans2.innerText = questions[questionIndex].incorrect_answers.b;
+  ans3.innerText = questions[questionIndex].incorrect_answers.c;
+  ans4.innerText = questions[questionIndex].incorrect_answers.d;
+
+  difficulty.innerText = questions[questionIndex].difficulty;
+  category.innerText = questions[questionIndex].category;
+  h2Question.innerText = questions[questionIndex].question;
+  questionNumber.innerText = questions[questionIndex].number;
+}
+
+ans1.addEventListener("click", function () {
+  if (ans1.innerText === questions[currentQuestion].correct_answer) {
+    ansTrue++;
+  }
+  currentQuestion++;
+
+  updateQuestion(currentQuestion);
+});
+
+ans2.addEventListener("click", function () {
+  if (ans2.innerText === questions[currentQuestion].correct_answer) {
+    ansTrue++;
+  }
+  currentQuestion++;
+
+  updateQuestion(currentQuestion);
+});
+
+ans3.addEventListener("click", function () {
+  if (ans3.innerText === questions[currentQuestion].correct_answer) {
+    ansTrue++;
+  }
+  currentQuestion++;
+
+  updateQuestion(currentQuestion);
+});
+
+ans4.addEventListener("click", function () {
+  if (ans4.innerText === questions[currentQuestion].correct_answer) {
+    ansTrue++;
+  }
+  currentQuestion++;
+
+  updateQuestion(currentQuestion);
+});
