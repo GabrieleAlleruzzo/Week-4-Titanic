@@ -242,13 +242,35 @@ ul {
 /* stelle distative*/
 i {
   color: #3B1655;
-
   font-size: 60px;
   
 }
 
 
+/* stelle attive*/
 i:hover {
   color: #00ffff;
-  
+}
+
+/*main allineato al centro + larghezza massima */
+main {
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* modulo contatti */
+form {
+  text-align: center;
+  display: inline-block;
+}
+
+input {
+  border: none;
+  border-bottom: #d20094 solid 2px;
+  background-color: rgba(255, 0, 0, 0);
+  width: 100%;
+  height: 30px;
+  font-size: 14px;
+  padding-left: 25px;
+
 }
