@@ -3,13 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="Assets/css/style.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap"
-      rel="stylesheet"
-    />
-
-    <title>Pagina quiz</title>
+    <title>Document</title>
   </head>
   <body>
     <header id="quizHeader">
@@ -32,18 +26,32 @@
         <div class="donut-case"></div>
       </div>
     </header>
-    <main>
-      <section id="question">
-        <h2></h2>
+    <main class="center">
+      <section>
+        <p id="difficulty"></p>
+        <p id="category"></p>
+        <h2 id="question"></h2>
       </section>
-      <section id="answer"></section>
+      <section id="answers">
+        <div>
+          <button><p id="ans1"></p></button>
+        </div>
+        <div>
+          <button><p id="ans2"></p></button>
+        </div>
+        <div>
+          <button><p id="ans3"></p></button>
+        </div>
+        <div>
+          <button><p id="ans4"></p></button>
+        </div>
+      </section>
     </main>
-    <footer>
+    <footer class="center">
       <p>
         Question <span id="questionNumber"></span>
         <span id="totalQuestions">/10</span>
       </p>
     </footer>
-    <script src="/Assets/js/script.js"></script>
   </body>
 </html>
