@@ -95,6 +95,22 @@ ul {
   color: black;
   border: 1px solid #00ffff;
 }
+#answers {
+  display: flex;
+}
+.question {
+  background-color: rgba(255, 255, 255, 0.14);
+  width: 350px;
+  color: white;
+  margin: 20px;
+  border-radius: 25px;
+  border: 1px solid white;
+  border-bottom: none;
+  font-weight: bold;
+}
+.question:hover {
+  background-color: #d20093a0;
+}
 
 /* IMMAGINI */
 #logo {
@@ -126,4 +142,18 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.test {
+  text-align: center;
+  text-transform: uppercase;
+}
+#totalQuestions {
+  color: #d20094;
+}
+.center .test {
+  text-align: center;
+}
+#question {
+  text-align: center;
 }
