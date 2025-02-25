@@ -157,16 +157,11 @@ ul {
 #question {
   text-align: center;
 }
-@@ -1,43 +1,121 @@
-#timer {
-  font-family: "Outfit", sans-serif;
-  padding: 20px;
+
+.donut {
+  position: relative;
+  width: 200px;
   height: 200px;
-  .donut {
-    position: relative;
-    width: 200px;
-    height: 200px;
-  }
 }
 
 .donut-default {
@@ -175,10 +170,6 @@ ul {
   border-radius: 50%;
 }
 
-background-image: url("/Assets/mockup/bg.jpg");
-background-size: cover;
-background-position: center;
-position: relative;
 .donut-white {
   width: 70%;
   height: 70%;
@@ -191,14 +182,6 @@ position: relative;
   z-index: 2;
 }
 
-.donut-line {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
 .donut-text {
   top: 25px;
   left: 25px;
@@ -209,50 +192,35 @@ position: relative;
   border-radius: 50%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   justify-content: space-around;
   align-items: center;
-  text-align: center;
-  overflow: hidden;
-  border: 10px solid rgb(191, 124, 203);
-}
 
-.pText {
-  color: white;
-  font-size: 15px;
   z-index: 3;
 }
 
-.number {
-  color: white;
-  font-size: 30px;
-  .donut-text span {
-    color: #ffffff;
-    font-family: "Outfit", sans-serif;
-    font-size: 12px;
-    color: #ffffff;
-  }
+.donut-text span {
+  color: #ffffff;
+  font-family: "Outfit", sans-serif;
+  font-size: 12px;
+  color: #ffffff;
 }
 .donut-text .number {
   font-size: 50px !important;
   font-family: "Outfit", sans-serif;
   font-weight: bold;
-  margin: 30px 0;
   line-height: 1.1;
 }
 
-.barTimer {
-  .instalment3 .donut-case {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background: #b1139f;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-clip: border-box;
-    overflow: hidden;
-  }
+.instalment3 .donut-case {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #b1139f;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-clip: border-box;
+  overflow: hidden;
 }
 
 .instalment3 .donut-case::before {
@@ -266,10 +234,6 @@ position: relative;
   left: 0;
   width: 100%;
   height: 100%;
-  border-radius: 50%;
-  border: 10px solid transparent;
-  background: conic-gradient(#d20094 0% 50%, #00ffff 50% 100%);
-  z-index: -1;
 }
 
 .instalment3 .donut-case::after {
@@ -306,4 +270,14 @@ position: relative;
   background: #fff;
   border-bottom: 1px solid #fff;
   z-index: 2;
+}
+#donut-line {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  background: conic-gradient(#00ffff 0% 100%);
+  transition: background 1s ease;
 }
