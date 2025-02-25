@@ -164,6 +164,7 @@ ul {
   height: 200px;
   background: transparent; /* Il background trasparente per la ciambella */
   border-radius: 50%;
+  mask: radial-gradient(circle, transparent 55%, black 41%);
 }
 
 .donut-default {
@@ -177,7 +178,7 @@ ul {
   width: 70%;
   height: 70%;
   border-radius: 50%;
-  background: transparent /* Colore bianco per il cerchio centrale */
+  background: transparent; /* Colore bianco per il cerchio centrale */
   top: 50%;
   position: absolute;
   left: 50%;
