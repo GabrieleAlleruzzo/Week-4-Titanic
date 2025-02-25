@@ -5,23 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome</title>
     <link rel="stylesheet" href="./Assets/css/style.css" />
-    <link rel="stylesheet" href="./Assets/css/welcome.css" />
   </head>
   <body>
     <header>
-      <img
-        class="logo-welcome"
-        src="./Assets/css/epicode_logo.png"
-        alt="Logo Epicode "
-      />
+      <div>
+        <img
+          src="./Assets/mockup/epicode_logo.png"
+          alt="epicode_logo"
+          id="logo"
+        />
+      </div>
+    </header>
+    <main class="center">
       <h1>
         Welcome to <br />
         <strong>your exam</strong>
       </h1>
-    </header>
-    <main class="welcome">
       <div>
-        <h3>Instuction</h3>
+        <h3 class="porpora">Instuction</h3>
         <p>
           We don't expect most engineers to know the answers to all of these
         </p>
@@ -41,11 +42,11 @@
         </ul>
       </div>
     </main>
-    <footer>
+    <footer class="center">
       <input type="checkbox" id="check" /> I promise to answer myself without
       help from anyone
       <a id="linkPagina" href="./test.html"
-        ><button type="button">PROCEED</button></a
+        ><button type="button" class="blue-button">PROCEED</button></a
       >
     </footer>
     <script src="./Assets/js/welcome.js"></script>

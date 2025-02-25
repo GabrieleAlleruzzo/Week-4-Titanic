@@ -75,26 +75,41 @@ ul {
 /* BOTTONI */
 
 .blue-button {
-  background-color: #00ffff;
+  background-color: transparent;
   display: inline-block;
   cursor: pointer;
-
-  color: #070027;
+  color: white;
   font-family: "Outfit", serif;
   font-weight: 800;
   font-size: 17px;
   padding: 1em;
   margin: 2em;
-
   width: 200px;
   height: 50px;
   padding: 0px;
-  border-color: #00ffff;
-  border: 0px;
-  box-shadow: 0px 10px 20px 0px #00ffff63;
+  border: 1px solid white;
 }
 .blue-button:hover {
-  background-color: #abffff;
+  background-color: #00ffff;
+  box-shadow: 0px 0px 20px 5px #00ffff63;
+  color: black;
+  border: 1px solid #00ffff;
+}
+#answers {
+  display: flex;
+}
+.question {
+  background-color: rgba(255, 255, 255, 0.14);
+  width: 350px;
+  color: white;
+  margin: 20px;
+  border-radius: 25px;
+  border: 1px solid white;
+  border-bottom: none;
+  font-weight: bold;
+}
+.question:hover {
+  background-color: #d20093a0;
 }
 
 /* IMMAGINI */
@@ -117,4 +132,28 @@ ul {
   border: 0.15em solid currentColor;
   transform: translateY(0.25em);
   margin-right: 1em;
+}
+
+#check:checked::before {
+  content: "✔";
+  text-align: center;
+  color: #fff;
+  font-size: 0.75em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.test {
+  text-align: center;
+  text-transform: uppercase;
+}
+#totalQuestions {
+  color: #d20094;
+}
+.center .test {
+  text-align: center;
+}
+#question {
+  text-align: center;
 }
