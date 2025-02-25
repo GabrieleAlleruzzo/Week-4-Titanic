@@ -163,8 +163,8 @@ ul {
   font: inherit;
   font-weight: bold;
   color: currentColor;
-  width: 1.15em;
-  height: 1.15em;
+  width: 1em;
+
   border: 0.15em solid currentColor;
   transform: translateY(0.25em);
   margin-right: 1em;
@@ -172,12 +172,16 @@ ul {
 
 #check:checked::before {
   content: "✔";
-  text-align: center;
   color: #fff;
-  font-size: 0.75em;
+  font-size: 0.95em;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .test {
