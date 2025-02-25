@@ -281,3 +281,12 @@ ul {
   background: conic-gradient(#00ffff 0% 100%);
   transition: background 1s ease;
 }
+.timer-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+  color: #ffffff;
+  font-family: "Outfit", sans-serif;
+  z-index: 10;
+}
