@@ -178,8 +178,10 @@ questionNumber.innerText = questions[0].number;
 
 function updateQuestion(questionIndex) {
   resetTimer();
-  difficulty.innerText = `Difficulty: ${questions[questionIndex].difficulty}`;
-  category.innerText = `Category: ${questions[questionIndex].category}`;
+  difficulty.innerText = `Difficulty: ${
+    questions[questionIndex - 1].difficulty
+  }`;
+  category.innerText = `Category: ${questions[questionIndex - 1].category}`;
   h2Question.innerText = questions[questionIndex - 1].question;
   questionNumber.innerText = questions[questionIndex - 1].number;
 
@@ -187,6 +189,7 @@ function updateQuestion(questionIndex) {
     case 1:
       questionIndex++;
       updateQuestion();
+      break;
     case 2:
       ans1.innerText = questions[questionIndex - 1].correct_answer;
       ans2.innerText = questions[questionIndex - 1].incorrect_answers.c;
@@ -236,6 +239,7 @@ function updateQuestion(questionIndex) {
       ans3.innerText = questions[questionIndex - 1].correct_answer;
       ans4.innerText = questions[questionIndex - 1].incorrect_answers.d;
       break;
+
     default:
       ans1.innerText = questions[questionIndex - 1].incorrect_answers.a;
       ans2.innerText = questions[questionIndex - 1].correct_answer;
