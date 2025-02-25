@@ -238,3 +238,17 @@ ul {
 .timer-danger {
   background: conic-gradient(#ff0000 0% 100%, #e0b5d3 0% 100%);
 }
+
+/* stelle distative*/
+i {
+  color: #3B1655;
+
+  font-size: 60px;
+  
+}
+
+
+i:hover {
+  color: #00ffff;
+  
+}
