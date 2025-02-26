@@ -3,7 +3,7 @@ const questions = [
     number: 1,
     category: "Sport: Soccer",
     type: "multiple",
-    difficulty: "easy",
+    difficulty: "Easy",
     question:
       "Nel calcio, quale tipo di rimessa in gioco viene effettuata dopo che la squadra avversaria ha fatto uscire il pallone da una linea di porta?",
     correct_answer: "A. Calcio di rinvio",
@@ -17,7 +17,7 @@ const questions = [
     number: 2,
     category: "Geo: Countries",
     type: "multiple",
-    difficulty: "easy",
+    difficulty: "Easy",
     question: "Dove si trova la Sagrada Familia?",
     correct_answer: "A. Barcellona",
     incorrect_answers: { b: "B. Madrid", c: "C. Siviglia", d: "D. Venezia" },
@@ -26,16 +26,16 @@ const questions = [
     number: 3,
     category: "Geo: Countries",
     type: "multiple",
-    difficulty: "easy",
+    difficulty: "Easy",
     question: "Qual è la capitale del Portogallo?",
-    correct_answer: "C.Lisbona",
+    correct_answer: "C. Lisbona",
     incorrect_answers: { a: "A. Porto", b: "B. Salamanca", d: "D. Berlino" },
   },
   {
     number: 4,
     category: "Nature: Animals",
     type: "multiple",
-    difficulty: "medium",
+    difficulty: "Medium",
     question: "Qual è il nome comune della Balaenoptera musculus??",
     correct_answer: "D. Balenottera azzurra",
     incorrect_answers: {
@@ -48,7 +48,7 @@ const questions = [
     number: 5,
     category: "Art: Music",
     type: "multiple",
-    difficulty: "medium",
+    difficulty: "Medium",
     question: "Quanti tasti ci sono su un pianoforte?",
     correct_answer: "C. 88",
     incorrect_answers: { a: "A. 80", b: "B. 100", d: "D. 62" },
@@ -58,7 +58,7 @@ const questions = [
     number: 6,
     category: "Histori: Rome",
     type: "multiple",
-    difficulty: "medium",
+    difficulty: "Medium",
     question: "Di chi era figlio adottivo l'imperatore Augusto?",
     correct_answer: "B. Giulio Cesare",
     incorrect_answers: {
@@ -71,10 +71,10 @@ const questions = [
     number: 7,
     category: "Science: World",
     type: "multiple",
-    difficulty: ",medium",
+    difficulty: "Medium",
     question:
       "Qual è il pianeta gassoso più voluminoso del nostro Sistema Solare?",
-    correct_answer: "D.Giove",
+    correct_answer: "D. Giove",
     incorrect_answers: { a: "A. Saturno", b: "B. Urano", c: "C. Nettuno" },
   },
 
@@ -82,9 +82,9 @@ const questions = [
     number: 8,
     category: "Art: Music",
     type: "multiple",
-    difficulty: "easy",
+    difficulty: "Easy",
     question: "Chi ha vinto il festival di Sanremo 2025?",
-    correct_answer: "C.Olly",
+    correct_answer: "C. Olly",
     incorrect_answers: {
       a: "A. Marcella Bella",
       b: "B. Topo Gigio",
@@ -95,7 +95,7 @@ const questions = [
     number: 9,
     category: "Art: Literature",
     type: "multiple",
-    difficulty: "hard",
+    difficulty: "Hard",
     question:
       "Qual è il nome di Madame Bovary, personaggio eponimo del romanzo di Flaubert?",
     correct_answer: "B. Emma  ",
@@ -105,10 +105,10 @@ const questions = [
     number: 10,
     category: "Hobbies: Toys",
     type: "multiple",
-    difficulty: "hard",
+    difficulty: "Hard",
     question:
       "Qual è stato il primo giocattolo a essere pubblicizzato in televisione?",
-    correct_answer: "C.Mr Potato",
+    correct_answer: "C. Mr Potato",
     incorrect_answers: { a: "A. Barbie", b: "B. Domino", d: "D. Polly Pocket" },
   },
 ];
@@ -141,43 +141,120 @@ window.onload = function () {
   timerInterval = setInterval(circleTimer, 1000);
 };
 
-const ans1 = document.getElementById("ans1");
-const ans2 = document.getElementById("ans2");
-const ans3 = document.getElementById("ans3");
-const ans4 = document.getElementById("ans4");
+const resetTimer = () => {
+  clearInterval(timerInterval);
+  seconds = 30;
+  timerNumber.textContent = seconds;
+  donutLine.style.background = "conic-gradient(#00ffff 0% 100%)";
+  timerInterval = setInterval(circleTimer, 1000);
+};
+
+let ans1 = document.getElementById("ans1");
+let ans2 = document.getElementById("ans2");
+let ans3 = document.getElementById("ans3");
+let ans4 = document.getElementById("ans4");
 const h2Question = document.getElementById("question");
 const category = document.getElementById("category");
 const difficulty = document.getElementById("difficulty");
 const questionNumber = document.getElementById("questionNumber");
 const timer = document.getElementById("timer");
 
-const ansTrue = 0;
+let ansTrue = 0;
 
 let currentQuestion = 0;
 
 ans1.innerText = questions[0].correct_answer;
-ans2.innerText = questions[0].incorrect_answers.b;
-ans3.innerText = questions[0].incorrect_answers.c;
+ans2.innerText = questions[0].incorrect_answers.c;
+ans3.innerText = questions[0].incorrect_answers.b;
 ans4.innerText = questions[0].incorrect_answers.d;
 
-difficulty.innerText = questions[0].difficulty;
+difficulty.innerText = `Difficulty: ${questions[0].difficulty}`;
 
-category.innerText = questions[0].category;
+category.innerText = `Category: ${questions[0].category}`;
 
 h2Question.innerText = questions[0].question;
 
 questionNumber.innerText = questions[0].number;
 
 function updateQuestion(questionIndex) {
-  ans1.innerText = questions[questionIndex].correct_answer;
-  ans2.innerText = questions[questionIndex].incorrect_answers.b;
-  ans3.innerText = questions[questionIndex].incorrect_answers.c;
-  ans4.innerText = questions[questionIndex].incorrect_answers.d;
+  resetTimer();
+  difficulty.innerText = `Difficulty: ${
+    questions[questionIndex - 1].difficulty
+  }`;
+  category.innerText = `Category: ${questions[questionIndex - 1].category}`;
+  h2Question.innerText = questions[questionIndex - 1].question;
+  questionNumber.innerText = questions[questionIndex - 1].number;
 
-  difficulty.innerText = questions[questionIndex].difficulty;
-  category.innerText = questions[questionIndex].category;
-  h2Question.innerText = questions[questionIndex].question;
-  questionNumber.innerText = questions[questionIndex].number;
+  switch (questionIndex) {
+    case 1:
+      questionIndex++;
+      updateQuestion();
+      break;
+    case 2:
+      ans1.innerText = questions[questionIndex - 1].correct_answer;
+      ans2.innerText = questions[questionIndex - 1].incorrect_answers.c;
+      ans3.innerText = questions[questionIndex - 1].incorrect_answers.b;
+      ans4.innerText = questions[questionIndex - 1].incorrect_answers.d;
+      break;
+    case 3:
+      ans1.innerText = questions[questionIndex - 1].incorrect_answers.a;
+      ans2.innerText = questions[questionIndex - 1].correct_answer;
+      ans3.innerText = questions[questionIndex - 1].incorrect_answers.b;
+      ans4.innerText = questions[questionIndex - 1].incorrect_answers.d;
+      break;
+    case 4:
+      ans4.innerText = questions[questionIndex - 1].correct_answer;
+      ans1.innerText = questions[questionIndex - 1].incorrect_answers.a;
+      ans2.innerText = questions[questionIndex - 1].incorrect_answers.c;
+      ans3.innerText = questions[questionIndex - 1].incorrect_answers.b;
+      break;
+    case 5:
+      ans1.innerText = questions[questionIndex - 1].incorrect_answers.a;
+      ans2.innerText = questions[questionIndex - 1].correct_answer;
+      ans3.innerText = questions[questionIndex - 1].incorrect_answers.b;
+      ans4.innerText = questions[questionIndex - 1].incorrect_answers.d;
+      break;
+
+    case 6:
+      ans1.innerText = questions[questionIndex - 1].incorrect_answers.a;
+      ans2.innerText = questions[questionIndex - 1].incorrect_answers.c;
+      ans3.innerText = questions[questionIndex - 1].correct_answer;
+      ans4.innerText = questions[questionIndex - 1].incorrect_answers.d;
+      break;
+    case 7:
+      ans1.innerText = questions[questionIndex - 1].incorrect_answers.a;
+      ans2.innerText = questions[questionIndex - 1].incorrect_answers.c;
+      ans3.innerText = questions[questionIndex - 1].incorrect_answers.b;
+      ans4.innerText = questions[questionIndex - 1].correct_answer;
+      break;
+    case 8:
+      ans1.innerText = questions[questionIndex - 1].incorrect_answers.a;
+      ans2.innerText = questions[questionIndex - 1].correct_answer;
+      ans3.innerText = questions[questionIndex - 1].incorrect_answers.b;
+      ans4.innerText = questions[questionIndex - 1].incorrect_answers.d;
+      break;
+    case 9:
+      ans1.innerText = questions[questionIndex - 1].incorrect_answers.a;
+      ans2.innerText = questions[questionIndex - 1].incorrect_answers.c;
+      ans3.innerText = questions[questionIndex - 1].correct_answer;
+      ans4.innerText = questions[questionIndex - 1].incorrect_answers.d;
+      break;
+
+    default:
+      ans1.innerText = questions[questionIndex - 1].incorrect_answers.a;
+      ans2.innerText = questions[questionIndex - 1].correct_answer;
+      ans3.innerText = questions[questionIndex - 1].incorrect_answers.b;
+      ans4.innerText = questions[questionIndex - 1].incorrect_answers.d;
+      break;
+  }
+}
+
+if (
+  currentQuestion === questions[questions.length - 1].number &&
+  seconds === 0
+) {
+  window.location.assign("results.html");
+  console.log(ansTrue);
 }
 
 ans1.addEventListener("click", function () {
