@@ -35,6 +35,11 @@ footer {
   vertical-align: middle;
 }
 
+.center-center {
+  text-align: center;
+  vertical-align: middle;
+}
+
 /* TESTI & TITOLI */
 
 p {
@@ -43,7 +48,7 @@ p {
 
 div p {
   font-size: 16px;
-  text-align: center;
+  text-align: left;
 }
 
 h1 {
@@ -58,7 +63,7 @@ div h2 {
   font-size: 60px;
   margin: 0px;
   padding: 0cap;
-  text-align: center;
+  text-align: left;
   vertical-align: middle;
 }
 
@@ -105,15 +110,18 @@ ul {
   padding: 0px;
   border: 1px solid white;
 }
+
 .blue-button:hover {
   background-color: #00ffff;
   box-shadow: 0px 0px 20px 5px #00ffff63;
   color: black;
   border: 1px solid #00ffff;
 }
+
 #answers {
   display: flex;
 }
+
 .question {
   background-color: rgba(255, 255, 255, 0.14);
   width: 350px;
@@ -124,6 +132,7 @@ ul {
   border-bottom: none;
   font-weight: bold;
 }
+
 .question:hover {
   background-color: #d20093a0;
 }
