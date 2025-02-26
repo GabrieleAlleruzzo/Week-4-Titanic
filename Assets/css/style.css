@@ -72,43 +72,7 @@ ul {
   padding-top: 2em;
 }
 
-/* TESTI & TITOLI RESULTS PAGE*/
-
-#h1-results {
-  text-align: center;
-  font-weight: bold;
-  margin-bottom: 0px;
-}
-
-#p-results {
-  text-align: center;
-  margin-top: 0px;
-  font-size: 30px;
-}
-
-#correct-results {
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: row;
-  margin-left: 60px;
-  font-size: 55px;
-}
-
-#wrong-results {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  margin-top: -69px;
-  margin-right: 60px;
-  font-size: 55px;
-}
-
 /* BOTTONI */
-
-#results-button {
-  text-align: center;
-  margin-top: 100px;
-}
 
 .blue-button {
   background-color: transparent;
@@ -163,8 +127,8 @@ ul {
   font: inherit;
   font-weight: bold;
   color: currentColor;
-  width: 1em;
-
+  width: 1.15em;
+  height: 1.15em;
   border: 0.15em solid currentColor;
   transform: translateY(0.25em);
   margin-right: 1em;
@@ -172,16 +136,12 @@ ul {
 
 #check:checked::before {
   content: "✔";
+  text-align: center;
   color: #fff;
-  font-size: 0.95em;
+  font-size: 0.75em;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  align-items: left;
+  justify-content: left;
 }
 
 .test {
@@ -282,15 +242,17 @@ ul {
 
 /* stelle distative*/
 i {
-  color: #3b1655;
+  color: #3B1655;
   font-size: 60px;
+  
 }
+
 
 /* stelle attive*/
 i:hover {
   color: #00ffff;
 }
-.hover {
+ .hover{
   color: #00ffff;
 }
 
@@ -314,4 +276,6 @@ input {
   height: 30px;
   font-size: 14px;
   padding-left: 25px;
+  color: #ffffff;
+
 }
