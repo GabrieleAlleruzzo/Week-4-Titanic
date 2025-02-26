@@ -251,6 +251,12 @@ function updateQuestion(questionIndex) {
       ans4.innerText = questions[questionIndex - 1].incorrect_answers.d;
       break;
 
+    case 10:
+      ans1.innerText = questions[questionIndex - 1].incorrect_answers.a;
+      ans2.innerText = questions[questionIndex - 1].correct_answer;
+      ans3.innerText = questions[questionIndex - 1].incorrect_answers.b;
+      ans4.innerText = questions[questionIndex - 1].incorrect_answers.d;
+      break;
     default:
       ans1.innerText = questions[questionIndex - 1].incorrect_answers.a;
       ans2.innerText = questions[questionIndex - 1].correct_answer;
@@ -264,6 +270,7 @@ function fine() {
   if (currentQuestion === questions.length || seconds === 0) {
     window.location.assign("results.html");
     console.log(ansTrue);
+    localStorage.setItem("ansTrue", ansTrue.valueOf());
   }
 }
 
@@ -306,3 +313,25 @@ ans4.addEventListener("click", function () {
 
   updateQuestion(currentQuestion);
 });
+
+console.log("hgbjbfyu", ansTrue);
+
+//PER NUOVO DOC JS
+
+/*const pCorrect = document.getElementById("Correct");
+                      const pWrong = document.getElementById("Wrong");
+                      const percLeft = document.getElementById("percentage-left");
+                      const percRight = document.getElementById("percentage-right");
+                      
+                      let ansTrueToS = ansTrue.toString();
+                      
+                      console.log(ansTrueToS); */
+
+/*pCorrect.innerText = `${ansTrue.toString}/10 questions`;
+                      pWrong.innerText = 10 - ansTrue + "/10 questions";
+                      
+                      console.log(pCorrect);
+                      console.log(pWrong);
+                      
+                      percLeft.innerText = `${ansTrue * 10}'%'`;
+                      percRight.innerText = (10 - ansTrue) * 10 + "%"; */
