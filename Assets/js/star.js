@@ -25,18 +25,17 @@ for (let i = 0; i < star.length; i++) {
       }
       lastSelected = i - 1;
     }
-
     //seleziona la classe hover
     else {
       for (let x = 0; x <= i; x++) {
         star[x].classList.add("hover");
       }
+      for (let x = i + 1; x < star.length; x++) {
+        star[x].classList.remove("hover");
+      }
+      lastSelected = i;
     }
     //deseleziona stelle successive
-    for (let x = i + 1; x < star.length; x++) {
-      star[x].classList.remove("hover");
-    }
-    lastSelected = i;
   });
 
   star[i].addEventListener("mouseover", function () {
