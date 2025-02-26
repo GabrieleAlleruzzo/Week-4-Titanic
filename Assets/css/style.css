@@ -72,7 +72,43 @@ ul {
   padding-top: 2em;
 }
 
+/* TESTI & TITOLI RESULTS PAGE*/
+
+#h1-results {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+
+#p-results {
+  text-align: center;
+  margin-top: 0px;
+  font-size: 30px;
+}
+
+#correct-results {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  margin-left: 60px;
+  font-size: 55px;
+}
+
+#wrong-results {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-top: -69px;
+  margin-right: 60px;
+  font-size: 55px;
+}
+
 /* BOTTONI */
+
+#results-button {
+  text-align: center;
+  margin-top: 100px;
+}
 
 .blue-button {
   background-color: transparent;
