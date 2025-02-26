@@ -279,7 +279,6 @@ ans1.addEventListener("click", function () {
   fine();
   if (ans1.innerText === questions[currentQuestion].correct_answer) {
     ansTrue++;
-    localStorage.setItem("ansTrue", ansTrue);
   }
 
   updateQuestion(currentQuestion);
@@ -290,7 +289,6 @@ ans2.addEventListener("click", function () {
   fine();
   if (ans2.innerText === questions[currentQuestion].correct_answer) {
     ansTrue++;
-    localStorage.setItem("ansTrue", ansTrue);
   }
 
   updateQuestion(currentQuestion);
@@ -301,7 +299,6 @@ ans3.addEventListener("click", function () {
   fine();
   if (ans3.innerText === questions[currentQuestion].correct_answer) {
     ansTrue++;
-    localStorage.setItem("ansTrue", ansTrue);
   }
 
   updateQuestion(currentQuestion);
@@ -312,7 +309,6 @@ ans4.addEventListener("click", function () {
   fine();
   if (ans4.innerText === questions[currentQuestion].correct_answer) {
     ansTrue++;
-    localStorage.setItem("ansTrue", ansTrue);
   }
 
   updateQuestion(currentQuestion);
