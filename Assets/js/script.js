@@ -111,6 +111,16 @@ const questions = [
     correct_answer: "C. Mr Potato",
     incorrect_answers: { a: "A. Barbie", b: "B. Domino", d: "D. Polly Pocket" },
   },
+  {
+    number: 11,
+    category: "Hobbies: Toys",
+    type: "multiple",
+    difficulty: "Hard",
+    question:
+      "Qual è stato il primo giocattolo a essere pubblicizzato in televisione?",
+    correct_answer: "C. Mr Potato",
+    incorrect_answers: { a: "A. Barbie", b: "B. Domino", d: "D. Polly Pocket" },
+  },
 ];
 
 let timerNumber = document.getElementById("timerNumber");
@@ -177,6 +187,7 @@ h2Question.innerText = questions[0].question;
 questionNumber.innerText = questions[0].number;
 
 function updateQuestion(questionIndex) {
+  fine();
   resetTimer();
   difficulty.innerText = `Difficulty: ${
     questions[questionIndex - 1].difficulty
@@ -184,11 +195,11 @@ function updateQuestion(questionIndex) {
   category.innerText = `Category: ${questions[questionIndex - 1].category}`;
   h2Question.innerText = questions[questionIndex - 1].question;
   questionNumber.innerText = questions[questionIndex - 1].number;
-
+  console.log(questionIndex);
   switch (questionIndex) {
     case 1:
-      questionIndex++;
-      updateQuestion();
+      currentQuestion++;
+      updateQuestion(currentQuestion);
       break;
     case 2:
       ans1.innerText = questions[questionIndex - 1].correct_answer;
@@ -249,46 +260,49 @@ function updateQuestion(questionIndex) {
   }
 }
 
-if (
-  currentQuestion === questions[questions.length - 1].number &&
-  seconds === 0
-) {
-  window.location.assign("results.html");
-  console.log(ansTrue);
+function fine() {
+  if (currentQuestion === questions.length || seconds === 0) {
+    window.location.assign("results.html");
+    console.log(ansTrue);
+  }
 }
 
 ans1.addEventListener("click", function () {
+  currentQuestion++;
+  fine();
   if (ans1.innerText === questions[currentQuestion].correct_answer) {
     ansTrue++;
   }
-  currentQuestion++;
 
   updateQuestion(currentQuestion);
 });
 
 ans2.addEventListener("click", function () {
+  currentQuestion++;
+  fine();
   if (ans2.innerText === questions[currentQuestion].correct_answer) {
     ansTrue++;
   }
-  currentQuestion++;
 
   updateQuestion(currentQuestion);
 });
 
 ans3.addEventListener("click", function () {
+  currentQuestion++;
+  fine();
   if (ans3.innerText === questions[currentQuestion].correct_answer) {
     ansTrue++;
   }
-  currentQuestion++;
 
   updateQuestion(currentQuestion);
 });
 
 ans4.addEventListener("click", function () {
+  currentQuestion++;
+  fine();
   if (ans4.innerText === questions[currentQuestion].correct_answer) {
     ansTrue++;
   }
-  currentQuestion++;
 
   updateQuestion(currentQuestion);
 });
