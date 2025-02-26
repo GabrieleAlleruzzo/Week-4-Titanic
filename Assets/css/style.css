@@ -42,13 +42,21 @@ footer {
 
 /* TESTI & TITOLI */
 
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
+
 p {
   font-size: 16px;
 }
 
 div p {
   font-size: 16px;
-  text-align: left;
+  text-align: center;
 }
 
 h1 {
@@ -64,7 +72,7 @@ div h2 {
   margin: 0px;
   padding: 0cap;
   text-align: left;
-  vertical-align: middle;
+  vertical-align: center;
 }
 
 h2 {
