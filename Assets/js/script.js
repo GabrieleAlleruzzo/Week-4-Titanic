@@ -170,7 +170,6 @@ const questionNumber = document.getElementById("questionNumber");
 const timer = document.getElementById("timer");
 
 let ansTrue = 0;
-
 let currentQuestion = 0;
 
 ans1.innerText = questions[0].correct_answer;
@@ -179,163 +178,98 @@ ans3.innerText = questions[0].incorrect_answers.b;
 ans4.innerText = questions[0].incorrect_answers.d;
 
 difficulty.innerText = `Difficulty: ${questions[0].difficulty}`;
-
 category.innerText = `Category: ${questions[0].category}`;
-
 h2Question.innerText = questions[0].question;
-
 questionNumber.innerText = questions[0].number;
 
 function updateQuestion(questionIndex) {
-  fine();
-  resetTimer();
-  difficulty.innerText = `Difficulty: ${
-    questions[questionIndex - 1].difficulty
-  }`;
-  category.innerText = `Category: ${questions[questionIndex - 1].category}`;
-  h2Question.innerText = questions[questionIndex - 1].question;
-  questionNumber.innerText = questions[questionIndex - 1].number;
-  console.log(questionIndex);
-  switch (questionIndex) {
-    case 1:
-      currentQuestion++;
-      updateQuestion(currentQuestion);
-      break;
-    case 2:
-      ans1.innerText = questions[questionIndex - 1].correct_answer;
-      ans2.innerText = questions[questionIndex - 1].incorrect_answers.c;
-      ans3.innerText = questions[questionIndex - 1].incorrect_answers.b;
-      ans4.innerText = questions[questionIndex - 1].incorrect_answers.d;
-      break;
-    case 3:
-      ans1.innerText = questions[questionIndex - 1].incorrect_answers.a;
-      ans2.innerText = questions[questionIndex - 1].correct_answer;
-      ans3.innerText = questions[questionIndex - 1].incorrect_answers.b;
-      ans4.innerText = questions[questionIndex - 1].incorrect_answers.d;
-      break;
-    case 4:
-      ans4.innerText = questions[questionIndex - 1].correct_answer;
-      ans1.innerText = questions[questionIndex - 1].incorrect_answers.a;
-      ans2.innerText = questions[questionIndex - 1].incorrect_answers.c;
-      ans3.innerText = questions[questionIndex - 1].incorrect_answers.b;
-      break;
-    case 5:
-      ans1.innerText = questions[questionIndex - 1].incorrect_answers.a;
-      ans2.innerText = questions[questionIndex - 1].correct_answer;
-      ans3.innerText = questions[questionIndex - 1].incorrect_answers.b;
-      ans4.innerText = questions[questionIndex - 1].incorrect_answers.d;
-      break;
-
-    case 6:
-      ans1.innerText = questions[questionIndex - 1].incorrect_answers.a;
-      ans2.innerText = questions[questionIndex - 1].incorrect_answers.c;
-      ans3.innerText = questions[questionIndex - 1].correct_answer;
-      ans4.innerText = questions[questionIndex - 1].incorrect_answers.d;
-      break;
-    case 7:
-      ans1.innerText = questions[questionIndex - 1].incorrect_answers.a;
-      ans2.innerText = questions[questionIndex - 1].incorrect_answers.c;
-      ans3.innerText = questions[questionIndex - 1].incorrect_answers.b;
-      ans4.innerText = questions[questionIndex - 1].correct_answer;
-      break;
-    case 8:
-      ans1.innerText = questions[questionIndex - 1].incorrect_answers.a;
-      ans2.innerText = questions[questionIndex - 1].correct_answer;
-      ans3.innerText = questions[questionIndex - 1].incorrect_answers.b;
-      ans4.innerText = questions[questionIndex - 1].incorrect_answers.d;
-      break;
-    case 9:
-      ans1.innerText = questions[questionIndex - 1].incorrect_answers.a;
-      ans2.innerText = questions[questionIndex - 1].incorrect_answers.c;
-      ans3.innerText = questions[questionIndex - 1].correct_answer;
-      ans4.innerText = questions[questionIndex - 1].incorrect_answers.d;
-      break;
-
-    case 10:
-      ans1.innerText = questions[questionIndex - 1].incorrect_answers.a;
-      ans2.innerText = questions[questionIndex - 1].correct_answer;
-      ans3.innerText = questions[questionIndex - 1].incorrect_answers.b;
-      ans4.innerText = questions[questionIndex - 1].incorrect_answers.d;
-      break;
-    default:
-      ans1.innerText = questions[questionIndex - 1].incorrect_answers.a;
-      ans2.innerText = questions[questionIndex - 1].correct_answer;
-      ans3.innerText = questions[questionIndex - 1].incorrect_answers.b;
-      ans4.innerText = questions[questionIndex - 1].incorrect_answers.d;
-      break;
+  if (questionIndex >= questions.length) {
+    fine();
+    return;
   }
+
+  resetTimer();
+  difficulty.innerText = `Difficulty: ${questions[questionIndex].difficulty}`;
+  category.innerText = `Category: ${questions[questionIndex].category}`;
+  h2Question.innerText = questions[questionIndex].question;
+  questionNumber.innerText = questions[questionIndex].number;
+
+  ans1.innerText = questions[questionIndex].correct_answer;
+  ans2.innerText = questions[questionIndex].incorrect_answers.a;
+  ans3.innerText = questions[questionIndex].incorrect_answers.b;
+  ans4.innerText = questions[questionIndex].incorrect_answers.c;
 }
 
 function fine() {
   if (currentQuestion === questions.length || seconds === 0) {
     localStorage.setItem("ansTrue", ansTrue);
     window.location.assign("results.html");
-    console.log(ansTrue);
   }
 }
 
 ans1.addEventListener("click", function () {
-  currentQuestion++;
-  fine();
   if (ans1.innerText === questions[currentQuestion].correct_answer) {
     ansTrue++;
-    localStorage.setItem("ansTrue", ansTrue);
   }
-
+  localStorage.setItem("ansTrue", ansTrue);
+  currentQuestion++;
+  fine();
   updateQuestion(currentQuestion);
 });
 
 ans2.addEventListener("click", function () {
-  currentQuestion++;
-  fine();
   if (ans2.innerText === questions[currentQuestion].correct_answer) {
     ansTrue++;
-    localStorage.setItem("ansTrue", ansTrue);
   }
-
+  localStorage.setItem("ansTrue", ansTrue);
+  currentQuestion++;
+  fine();
   updateQuestion(currentQuestion);
 });
 
 ans3.addEventListener("click", function () {
-  currentQuestion++;
-  fine();
   if (ans3.innerText === questions[currentQuestion].correct_answer) {
     ansTrue++;
-    localStorage.setItem("ansTrue", ansTrue);
   }
-
+  localStorage.setItem("ansTrue", ansTrue);
+  currentQuestion++;
+  fine();
   updateQuestion(currentQuestion);
 });
 
 ans4.addEventListener("click", function () {
-  currentQuestion++;
-  fine();
   if (ans4.innerText === questions[currentQuestion].correct_answer) {
     ansTrue++;
-    localStorage.setItem("ansTrue", ansTrue);
   }
-
+  localStorage.setItem("ansTrue", ansTrue);
+  currentQuestion++;
+  fine();
   updateQuestion(currentQuestion);
 });
 
-console.log("hgbjbfyu", ansTrue);
+let ansTrueAvanza = localStorage.getItem("ansTrue");
+let pCorrect = document.getElementById("Correct");
+let pWrong = document.getElementById("Wrong");
+let percLeft = document.getElementById("percentage-left");
+let percRight = document.getElementById("percentage-right");
 
-//PER NUOVO DOC JS
+if (ansTrueAvanza !== null) {
+  ansTrueAvanza = parseInt(ansTrueAvanza, 10);
+  if (isNaN(ansTrueAvanza)) {
+    ansTrueAvanza = 0;
+  }
 
-/*const pCorrect = document.getElementById("Correct");
-                      const pWrong = document.getElementById("Wrong");
-                      const percLeft = document.getElementById("percentage-left");
-                      const percRight = document.getElementById("percentage-right");
-                      
-                      let ansTrueToS = ansTrue.toString();
-                      
-                      console.log(ansTrueToS); */
+  const totalQuestions = 10;
+  const correctPercentage = (ansTrueAvanza / totalQuestions) * 100;
+  const wrongPercentage = 100 - correctPercentage;
 
-/*pCorrect.innerText = `${ansTrue.toString}/10 questions`;
-                      pWrong.innerText = 10 - ansTrue + "/10 questions";
-                      
-                      console.log(pCorrect);
-                      console.log(pWrong);
-                      
-                      percLeft.innerText = `${ansTrue * 10}'%'`;
-                      percRight.innerText = (10 - ansTrue) * 10 + "%"; */
+  pCorrect.innerText = `${ansTrueAvanza}/10 questions`;
+  pWrong.innerText = `${totalQuestions - ansTrueAvanza}/10 questions`;
+  percLeft.innerText = `${correctPercentage.toFixed(2)}%`;
+  percRight.innerText = `${wrongPercentage.toFixed(2)}%`;
+} else {
+  pCorrect.innerText = "0/10 questions";
+  pWrong.innerText = "10/10 questions";
+  percLeft.innerText = "0%";
+  percRight.innerText = "100%";
+}
