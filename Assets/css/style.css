@@ -42,11 +42,13 @@ footer {
 
 /* TESTI & TITOLI */
 
-.align-left {
+.align-left p,
+.align-left h2 {
   text-align: left;
 }
 
-.align-right {
+.align-right p,
+.align-right h2 {
   text-align: right;
 }
 
@@ -94,6 +96,20 @@ li {
 
 ul {
   padding-top: 2em;
+}
+
+.centered-axis-xy {
+  width: 180px;
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  transform: translate(-50%, -50%);
+}
+
+.centered-axis-xy p {
+  font-size: smaller;
+  padding: 0px;
+  margin: 5px;
 }
 
 /* BOTTONI */
