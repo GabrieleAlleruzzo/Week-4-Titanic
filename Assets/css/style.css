@@ -34,20 +34,6 @@ footer {
   margin: auto;
   vertical-align: middle;
 }
-.center-center {
-  width: 50%;
-  display: block;
-  margin: auto;
-  vertical-align: middle;
-  text-align: center;
-}
-
-.inline {
-  display: inline;
-  width: 200px;
-  float: left;
-  vertical-align: middle;
-}
 
 /* TESTI & TITOLI */
 
@@ -55,9 +41,25 @@ p {
   font-size: 16px;
 }
 
+div p {
+  font-size: 16px;
+  text-align: center;
+}
+
 h1 {
   font-weight: normal;
   font-size: 60px;
+  margin: 0%;
+  text-align: center;
+}
+
+div h2 {
+  font-weight: normal;
+  font-size: 60px;
+  margin: 0px;
+  padding: 0cap;
+  text-align: center;
+  vertical-align: middle;
 }
 
 h2 {
@@ -254,4 +256,45 @@ ul {
 /* Aggiunta della classe per il timer sotto i 10 secondi */
 .timer-danger {
   background: conic-gradient(#ff0000 0% 100%, #e0b5d3 0% 100%);
+}
+
+/* COLONNE */
+
+.column-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.column-expanded {
+  flex: 1.5;
+}
+
+.graph-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.column {
+  float: left;
+  text-align: center;
+}
+
+.left,
+.right {
+  width: 25%;
+}
+
+.middle {
+  width: 50%;
+}
+
+#myChart {
+  width: 90% !important;
+  height: auto !important;
+  max-width: 300px;
 }

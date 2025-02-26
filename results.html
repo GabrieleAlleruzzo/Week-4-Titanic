@@ -13,20 +13,26 @@
       <img id="logo" src="./Assets/css/epicode_logo.png" alt="Logo Epicode " />
     </header>
     <main class="center">
-      <div>
+      <div class="center-center">
         <h1>Results</h1>
         <p>The summary of your answers:</p>
       </div>
+      <div class="column-container">
+        <div class="column left">
+          <h2>Correct</h2>
+          <h2><strong>50%</strong></h2>
+        </div>
+        <div class="column middle column-expanded">
+          <div class="graph-container">
+            <canvas id="myChart"></canvas>
+          </div>
+        </div>
+        <div class="column right">
+          <h2>Wrong</h2>
+          <h2><strong>50%</strong></h2>
+        </div>
+      </div>
       <div>
-        <h2 class="inline">Correct</h2>
-      </div>
-      <div class="graph">
-        <canvas id="myChart" style="width: 100%; max-width: 700px"></canvas>
-      </div>
-      <div>
-        <h2 class="inline">Wrong</h2>
-      </div>
-      <div class="center-center">
         <a href="/review.html"><button class="blue-button">RATE US</button></a>
       </div>
     </main>
@@ -36,6 +42,12 @@
       var yValues = [55, 49];
       var barColors = ["#d20093a0", "#00ffff"];
 
+      var chartCanvas = document.getElementById("myChart");
+      chartCanvas.width = 600;
+      chartCanvas.height = 600;
+      chartCanvas.style.filter =
+        "drop-shadow(0px 0px 20px rgba(0, 2, 46, 0.8))";
+
       new Chart("myChart", {
         type: "doughnut",
         data: {
@@ -43,12 +55,13 @@
             {
               backgroundColor: barColors,
               data: yValues,
+              borderWidth: 0,
             },
           ],
         },
         options: {
           title: {
-            display: true,
+            display: false,
             text: "Results",
           },
         },
