@@ -107,7 +107,7 @@ ul {
   width: 180px;
   position: absolute;
   left: 50%;
-  top: 46%;
+  top: auto;
   transform: translate(-50%, -50%);
 }
 
@@ -302,6 +302,7 @@ ul {
   justify-content: center;
   align-items: center;
   width: 100%;
+  margin: 80px 0px 80px 0px;
 }
 
 .column-expanded {
@@ -334,7 +335,10 @@ ul {
   width: 90% !important;
   height: auto !important;
   max-width: 300px;
+  position: absolute;
 }
+
+
 /* stelle distative*/
 i {
   color: #3b1655;
@@ -371,3 +375,4 @@ input {
   padding-left: 25px;
   color: #ffffff;
 }
+
