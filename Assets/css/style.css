@@ -140,8 +140,8 @@ ul {
   color: #fff;
   font-size: 0.75em;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: left;
+  justify-content: left;
 }
 
 .test {
@@ -276,5 +276,6 @@ input {
   height: 30px;
   font-size: 14px;
   padding-left: 25px;
+  color: #ffffff;
 
 }
