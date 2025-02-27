@@ -9,3 +9,8 @@ checkbox.addEventListener("change", function () {
     link.style.pointerEvents = "none";
   }
 });
+window.addEventListener("load", function () {
+  const isChecked = localStorage.getItem("isChecked") === "true";
+  checkbox.checked = isChecked;
+  link.style.pointerEvents = isChecked ? "auto" : "none";
+});
