@@ -9,7 +9,7 @@ body {
   background-image: url(./bg.jpg);
   background-size: cover;
 
-  color: white;
+  color: #e6e6e6;
   font-family: "Outfit", serif;
   font-optical-sizing: auto;
   font-weight: normal;
@@ -74,7 +74,7 @@ h1 {
   margin: 0%;
   text-align: center;
   line-height: 0.7em;
-  color: #ffffffdc;
+  color: #e6e6e6;
 }
 
 div h2 {
