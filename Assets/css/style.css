@@ -205,7 +205,8 @@ ul {
 
 /* IMMAGINI */
 #logo {
-  max-width: 25%;
+  max-width: 20%;
+  margin: auto;
   height: auto;
 }
 
