@@ -115,16 +115,17 @@ const circleTimer = () => {
     let percentage = (remaining / 30) * 100;
 
     if (remaining < 10) {
-      donutLine.style.background = `conic-gradient(#ff0000 0% ${percentage}%, #e0b5d3 ${percentage}% 100%)`;
+      donutLine.style.background = `conic-gradient(#ff0000 0% ${percentage}%,rgba(255, 255, 255, 0.5) ${percentage}% 100%)`;
     } else {
-      donutLine.style.background = `conic-gradient(#00ffff 0% ${percentage}%, #e0b5d3 ${percentage}% 100%)`;
+      donutLine.style.background = `conic-gradient(#00ffff 0% ${percentage}%,rgba(255, 255, 255, 0.5) ${percentage}% 100%)`;
     }
 
     timerAnimationFrame = requestAnimationFrame(circleTimer);
   } else {
     cancelAnimationFrame(timerAnimationFrame);
     console.log("Tempo scaduto");
-    donutLine.style.background = "conic-gradient(#e0b5d3 0% 100%)";
+    donutLine.style.background =
+      "conic-gradient(rgba(255, 255, 255, 0.5) 0% 100%)";
   }
 };
 
