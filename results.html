@@ -33,12 +33,9 @@
             <canvas id="myChart"></canvas>
           </div>
           <div class="centered-axis-xy">
-            <p><strong>Congratulations!</strong></p>
-            <p class="azzurro">You passed the exam.</p>
-            <p>
-              We'll send you the certificate in a few minutes. check your email
-              (including promotions/spam folder)
-            </p>
+            <p><strong id="Congratulations"></strong></p>
+            <p id="azzurro" class="azzurro">f</p>
+            <p id="descrizione"></p>
           </div>
         </div>
         <div class="column right align-right">
@@ -52,36 +49,5 @@
       </div>
     </main>
     <script src="./Assets/js/result.js"></script>
-    <script>
-      var xValues = ["Right", "Wrong"];
-      var yValues = [55, 49];
-      var barColors = ["#d20094", "#00ffff"];
-
-      var chartCanvas = document.getElementById("myChart");
-      chartCanvas.width = 600;
-      chartCanvas.height = 600;
-      chartCanvas.style.filter =
-        "drop-shadow(0px 0px 20px rgba(0, 2, 46, 0.8))";
-
-      new Chart("myChart", {
-        type: "doughnut",
-        data: {
-          datasets: [
-            {
-              backgroundColor: barColors,
-              data: yValues,
-              borderWidth: 0,
-            },
-          ],
-        },
-        options: {
-          cutoutPercentage: 70,
-          title: {
-            display: false,
-            text: "Results",
-          },
-        },
-      });
-    </script>
   </body>
 </html>
