@@ -186,9 +186,9 @@ ul {
 
 /* IMMAGINI */
 #logo {
-  max-width: 10%;
+  max-width: 20%;
+  margin: auto;
   height: auto;
-  margin-left: 25%;
 }
 
 /* CHECKMARK */
