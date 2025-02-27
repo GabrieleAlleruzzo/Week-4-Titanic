@@ -144,6 +144,14 @@ ul {
 
 #answers {
   display: flex;
+  flex-direction: column; /* Organizza i contenuti in colonne */
+  align-items: center; /* Centra i contenuti orizzontalmente */
+}
+
+#answers > div {
+  display: flex; /* Organizza i contenuti di ogni div in riga */
+  justify-content: space-between; /* Distribuisce lo spazio tra i bottoni */
+  width: 100%; /* Usa tutta la larghezza disponibile */
 }
 
 .question {
@@ -157,6 +165,11 @@ ul {
   font-weight: bold;
 }
 
+.question p {
+  margin: 0; /* Rimuovi il margine predefinito del paragrafo */
+  padding: 10px; /* Aggiungi spaziatura interna */
+  text-align: center; /* Centra il testo */
+}
 .question:hover {
   background-color: #d20093a0;
 }
@@ -338,7 +351,6 @@ ul {
   position: absolute;
 }
 
-
 /* stelle distative*/
 i {
   color: #3b1655;
@@ -375,4 +387,3 @@ input {
   padding-left: 25px;
   color: #ffffff;
 }
-
