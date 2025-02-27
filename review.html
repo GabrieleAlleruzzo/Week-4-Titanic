@@ -14,7 +14,7 @@
     />
   </head>
   <body>
-    <header>
+    <header class="center">
       <a href="/welcome.html">
         <img
           src="./Assets/mockup/epicode_logo.png"
@@ -25,11 +25,11 @@
     </header>
     <main class="center-center">
       <h1>Tell us how it's going</h1>
-      <h2>
+      <h3 class="h3-review">
         From 0 to 10, how likely are you to recommende EPICODE to a friend or a
         colleague?
-      </h2>
-      <div>
+      </h3>
+      <div id="stars-div">
         <a href="#"><i class="fa-solid fa-star"></i></a>
         <a href="#"><i class="fa-solid fa-star"></i></a>
         <a href="#"><i class="fa-solid fa-star"></i></a>
@@ -41,7 +41,9 @@
         <a href="#"><i class="fa-solid fa-star"></i></a>
         <a href="#"><i class="fa-solid fa-star"></i></a>
       </div>
-      <p>Leave us an open feedback about your experience so far</p>
+      <h3 class="h3-review">
+        Leave us an open feedback about your experience so far
+      </h3>
       <form onsubmit="alert('messaggio inviato')">
         <input type="text" placeholder="write your comment here" />
         <button class="blue-button" type="submit">MORE INFO</button>

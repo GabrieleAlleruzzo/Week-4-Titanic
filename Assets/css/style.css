@@ -51,6 +51,9 @@ footer {
 .align-left h1 {
   text-align: left;
 }
+.align-left {
+  margin-top: 10%;
+}
 
 .align-right p,
 .align-right h2 {
@@ -94,6 +97,18 @@ h2 {
 h3 {
   font-size: 2em;
   font-weight: normal;
+}
+
+.h3-review {
+  font-size: 30px;
+  color: rgba(255, 255, 255, 0.849);
+  margin-left: 10%;
+  margin-right: 11%;
+}
+
+#h3-results {
+  margin-top: 0px;
+  font-size: 30px;
 }
 
 .porpora {
@@ -175,6 +190,10 @@ ul {
   font-weight: bold;
 }
 
+#sch {
+  height: 420px;
+}
+
 .question p {
   margin: 0; /* Rimuovi il margine predefinito del paragrafo */
   padding: 10px; /* Aggiungi spaziatura interna */
@@ -191,9 +210,9 @@ border: 2px solid transparent;
 
 /* IMMAGINI */
 #logo {
-  max-width: 10%;
+  max-width: 20%;
+  margin: auto;
   height: auto;
-  margin-left: 25%;
 }
 
 /* CHECKMARK */
@@ -387,10 +406,35 @@ i:hover {
   color: #00ffff;
 }
 
+/* Riposizionamento stelle */
+#stars-div {
+  margin-top: 35px;
+  margin-bottom: 8%;
+}
+
+#stars-div i {
+  padding-right: 7px;
+  font-size: 3.3em;
+}
+
 /*main allineato al centro + larghezza massima */
 main {
   max-width: 1000px;
   margin: auto;
+}
+
+/*header allineato al centro + larghezza massima */
+header {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*header Quiz allineato al centro + larghezza massima */
+#quizHeader {
+  width: 50%;
+  margin-left: 20%;
+  margin-right: auto;
 }
 
 /* modulo contatti */
