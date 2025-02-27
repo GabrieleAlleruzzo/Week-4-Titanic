@@ -117,7 +117,7 @@ ul {
   width: 180px;
   position: absolute;
   left: 50%;
-  top: 46%;
+  top: auto;
   transform: translate(-50%, -50%);
 }
 
@@ -154,6 +154,14 @@ ul {
 
 #answers {
   display: flex;
+  flex-direction: column; /* Organizza i contenuti in colonne */
+  align-items: center; /* Centra i contenuti orizzontalmente */
+}
+
+#answers > div {
+  display: flex; /* Organizza i contenuti di ogni div in riga */
+  justify-content: space-between; /* Distribuisce lo spazio tra i bottoni */
+  width: 100%; /* Usa tutta la larghezza disponibile */
 }
 
 .question {
@@ -167,6 +175,11 @@ ul {
   font-weight: bold;
 }
 
+.question p {
+  margin: 0; /* Rimuovi il margine predefinito del paragrafo */
+  padding: 10px; /* Aggiungi spaziatura interna */
+  text-align: center; /* Centra il testo */
+}
 .question:hover {
   background-color: #d20093a0;
 }
@@ -312,6 +325,7 @@ ul {
   justify-content: center;
   align-items: center;
   width: 100%;
+  margin: 80px 0px 80px 0px;
 }
 
 .column-expanded {
@@ -344,7 +358,9 @@ ul {
   width: 90% !important;
   height: auto !important;
   max-width: 300px;
+  position: absolute;
 }
+
 /* stelle distative*/
 i {
   color: #3b1655;

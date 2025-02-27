@@ -7,11 +7,11 @@ const questions = [
     question:
       "Nel calcio, quale tipo di rimessa in gioco viene effettuata dopo che la squadra avversaria ha fatto uscire il pallone da una linea di porta?",
     correct_answer: "A. Calcio di rinvio",
-    incorrect_answers: {
-      b: "B. Corner",
-      c: "C. Calcio di punizione",
-      d: "D. Tocco di mano",
-    },
+    incorrect_answers: [
+      "B. Corner",
+      "C. Calcio di punizione",
+      "D. Tocco di mano",
+    ],
   },
   {
     number: 2,
@@ -20,7 +20,7 @@ const questions = [
     difficulty: "Easy",
     question: "Dove si trova la Sagrada Familia?",
     correct_answer: "A. Barcellona",
-    incorrect_answers: { b: "B. Madrid", c: "C. Siviglia", d: "D. Venezia" },
+    incorrect_answers: ["B. Madrid", "C. Siviglia", "D. Venezia"],
   },
   {
     number: 3,
@@ -29,20 +29,16 @@ const questions = [
     difficulty: "Easy",
     question: "Qual è la capitale del Portogallo?",
     correct_answer: "C. Lisbona",
-    incorrect_answers: { a: "A. Porto", b: "B. Salamanca", d: "D. Berlino" },
+    incorrect_answers: ["A. Porto", "B. Salamanca", "D. Berlino"],
   },
   {
     number: 4,
     category: "Nature: Animals",
     type: "multiple",
     difficulty: "Medium",
-    question: "Qual è il nome comune della Balaenoptera musculus??",
+    question: "Qual è il nome comune della Balaenoptera musculus?",
     correct_answer: "D. Balenottera azzurra",
-    incorrect_answers: {
-      a: "A. Squalo bianco",
-      b: "B. Balena",
-      c: "C. Beluga",
-    },
+    incorrect_answers: ["A. Squalo bianco", "B. Balena", "C. Beluga"],
   },
   {
     number: 5,
@@ -51,9 +47,8 @@ const questions = [
     difficulty: "Medium",
     question: "Quanti tasti ci sono su un pianoforte?",
     correct_answer: "C. 88",
-    incorrect_answers: { a: "A. 80", b: "B. 100", d: "D. 62" },
+    incorrect_answers: ["A. 80", "B. 100", "D. 62"],
   },
-
   {
     number: 6,
     category: "Histori: Rome",
@@ -61,11 +56,7 @@ const questions = [
     difficulty: "Medium",
     question: "Di chi era figlio adottivo l'imperatore Augusto?",
     correct_answer: "B. Giulio Cesare",
-    incorrect_answers: {
-      a: "A. Diogene",
-      c: "C. Nerone",
-      d: "D. Marco Antonio",
-    },
+    incorrect_answers: ["A. Diogene", "C. Nerone", "D. Marco Antonio"],
   },
   {
     number: 7,
@@ -75,9 +66,8 @@ const questions = [
     question:
       "Qual è il pianeta gassoso più voluminoso del nostro Sistema Solare?",
     correct_answer: "D. Giove",
-    incorrect_answers: { a: "A. Saturno", b: "B. Urano", c: "C. Nettuno" },
+    incorrect_answers: ["A. Saturno", "B. Urano", "C. Nettuno"],
   },
-
   {
     number: 8,
     category: "Art: Music",
@@ -85,11 +75,7 @@ const questions = [
     difficulty: "Easy",
     question: "Chi ha vinto il festival di Sanremo 2025?",
     correct_answer: "C. Olly",
-    incorrect_answers: {
-      a: "A. Marcella Bella",
-      b: "B. Topo Gigio",
-      d: "D. Lucio Corsi",
-    },
+    incorrect_answers: ["A. Marcella Bella", "B. Topo Gigio", "D. Lucio Corsi"],
   },
   {
     number: 9,
@@ -98,8 +84,8 @@ const questions = [
     difficulty: "Hard",
     question:
       "Qual è il nome di Madame Bovary, personaggio eponimo del romanzo di Flaubert?",
-    correct_answer: "B. Emma  ",
-    incorrect_answers: { a: "A. Marie", c: "C. Julie", d: "D. Héloïse" },
+    correct_answer: "B. Emma",
+    incorrect_answers: ["A. Marie", "C. Julie", "D. Héloïse"],
   },
   {
     number: 10,
@@ -109,54 +95,52 @@ const questions = [
     question:
       "Qual è stato il primo giocattolo a essere pubblicizzato in televisione?",
     correct_answer: "C. Mr Potato",
-    incorrect_answers: { a: "A. Barbie", b: "B. Domino", d: "D. Polly Pocket" },
-  },
-  {
-    number: 11,
-    category: "Hobbies: Toys",
-    type: "multiple",
-    difficulty: "Hard",
-    question:
-      "Qual è stato il primo giocattolo a essere pubblicizzato in televisione?",
-    correct_answer: "C. Mr Potato",
-    incorrect_answers: { a: "A. Barbie", b: "B. Domino", d: "D. Polly Pocket" },
+    incorrect_answers: ["A. Barbie", "B. Domino", "D. Polly Pocket"],
   },
 ];
 
 let timerNumber = document.getElementById("timerNumber");
 let seconds = 30;
 let donutLine = document.getElementById("donut-line");
-let timerInterval;
+let startTime;
+let timerAnimationFrame;
 
 const circleTimer = () => {
-  if (seconds > 0) {
-    seconds--;
-    timerNumber.textContent = seconds;
-    let percentage = (seconds / 30) * 100;
+  let now = Date.now();
+  let elapsed = Math.floor((now - startTime) / 1000);
+  let remaining = seconds - elapsed;
 
-    // Cambia il colore del timer quando scende sotto i 10 secondi
-    if (seconds < 10) {
+  if (remaining >= 0) {
+    timerNumber.textContent = remaining;
+    let percentage = (remaining / 30) * 100;
+
+    if (remaining < 10) {
       donutLine.style.background = `conic-gradient(#ff0000 0% ${percentage}%, #e0b5d3 ${percentage}% 100%)`;
     } else {
       donutLine.style.background = `conic-gradient(#00ffff 0% ${percentage}%, #e0b5d3 ${percentage}% 100%)`;
     }
+
+    timerAnimationFrame = requestAnimationFrame(circleTimer);
   } else {
-    clearInterval(timerInterval);
+    cancelAnimationFrame(timerAnimationFrame);
     console.log("Tempo scaduto");
     donutLine.style.background = "conic-gradient(#e0b5d3 0% 100%)";
   }
 };
 
 window.onload = function () {
-  timerInterval = setInterval(circleTimer, 1000);
+  updateQuestion(0); // Aggiungi questa chiamata per aggiornare la domanda iniziale
+  startTime = Date.now();
+  timerAnimationFrame = requestAnimationFrame(circleTimer);
 };
 
 const resetTimer = () => {
-  clearInterval(timerInterval);
+  cancelAnimationFrame(timerAnimationFrame);
   seconds = 30;
   timerNumber.textContent = seconds;
   donutLine.style.background = "conic-gradient(#00ffff 0% 100%)";
-  timerInterval = setInterval(circleTimer, 1000);
+  startTime = Date.now();
+  timerAnimationFrame = requestAnimationFrame(circleTimer);
 };
 
 let ans1 = document.getElementById("ans1");
@@ -167,142 +151,92 @@ const h2Question = document.getElementById("question");
 const category = document.getElementById("category");
 const difficulty = document.getElementById("difficulty");
 const questionNumber = document.getElementById("questionNumber");
-const timer = document.getElementById("timer");
 
 let ansTrue = 0;
-
 let currentQuestion = 0;
 
-ans1.innerText = questions[0].correct_answer;
-ans2.innerText = questions[0].incorrect_answers.c;
-ans3.innerText = questions[0].incorrect_answers.b;
-ans4.innerText = questions[0].incorrect_answers.d;
-
 difficulty.innerText = `Difficulty: ${questions[0].difficulty}`;
-
 category.innerText = `Category: ${questions[0].category}`;
-
 h2Question.innerText = questions[0].question;
-
 questionNumber.innerText = questions[0].number;
 
 function updateQuestion(questionIndex) {
-  fine();
-  resetTimer();
-  difficulty.innerText = `Difficulty: ${
-    questions[questionIndex - 1].difficulty
-  }`;
-  category.innerText = `Category: ${questions[questionIndex - 1].category}`;
-  h2Question.innerText = questions[questionIndex - 1].question;
-  questionNumber.innerText = questions[questionIndex - 1].number;
-  console.log(questionIndex);
-  switch (questionIndex) {
-    case 1:
-      currentQuestion++;
-      updateQuestion(currentQuestion);
-      break;
-    case 2:
-      ans1.innerText = questions[questionIndex - 1].correct_answer;
-      ans2.innerText = questions[questionIndex - 1].incorrect_answers.c;
-      ans3.innerText = questions[questionIndex - 1].incorrect_answers.b;
-      ans4.innerText = questions[questionIndex - 1].incorrect_answers.d;
-      break;
-    case 3:
-      ans1.innerText = questions[questionIndex - 1].incorrect_answers.a;
-      ans2.innerText = questions[questionIndex - 1].correct_answer;
-      ans3.innerText = questions[questionIndex - 1].incorrect_answers.b;
-      ans4.innerText = questions[questionIndex - 1].incorrect_answers.d;
-      break;
-    case 4:
-      ans4.innerText = questions[questionIndex - 1].correct_answer;
-      ans1.innerText = questions[questionIndex - 1].incorrect_answers.a;
-      ans2.innerText = questions[questionIndex - 1].incorrect_answers.c;
-      ans3.innerText = questions[questionIndex - 1].incorrect_answers.b;
-      break;
-    case 5:
-      ans1.innerText = questions[questionIndex - 1].incorrect_answers.a;
-      ans2.innerText = questions[questionIndex - 1].correct_answer;
-      ans3.innerText = questions[questionIndex - 1].incorrect_answers.b;
-      ans4.innerText = questions[questionIndex - 1].incorrect_answers.d;
-      break;
+  console.log("Aggiorno la domanda:", questionIndex);
 
-    case 6:
-      ans1.innerText = questions[questionIndex - 1].incorrect_answers.a;
-      ans2.innerText = questions[questionIndex - 1].incorrect_answers.c;
-      ans3.innerText = questions[questionIndex - 1].correct_answer;
-      ans4.innerText = questions[questionIndex - 1].incorrect_answers.d;
-      break;
-    case 7:
-      ans1.innerText = questions[questionIndex - 1].incorrect_answers.a;
-      ans2.innerText = questions[questionIndex - 1].incorrect_answers.c;
-      ans3.innerText = questions[questionIndex - 1].incorrect_answers.b;
-      ans4.innerText = questions[questionIndex - 1].correct_answer;
-      break;
-    case 8:
-      ans1.innerText = questions[questionIndex - 1].incorrect_answers.a;
-      ans2.innerText = questions[questionIndex - 1].correct_answer;
-      ans3.innerText = questions[questionIndex - 1].incorrect_answers.b;
-      ans4.innerText = questions[questionIndex - 1].incorrect_answers.d;
-      break;
-    case 9:
-      ans1.innerText = questions[questionIndex - 1].incorrect_answers.a;
-      ans2.innerText = questions[questionIndex - 1].incorrect_answers.c;
-      ans3.innerText = questions[questionIndex - 1].correct_answer;
-      ans4.innerText = questions[questionIndex - 1].incorrect_answers.d;
-      break;
-
-    default:
-      ans1.innerText = questions[questionIndex - 1].incorrect_answers.a;
-      ans2.innerText = questions[questionIndex - 1].correct_answer;
-      ans3.innerText = questions[questionIndex - 1].incorrect_answers.b;
-      ans4.innerText = questions[questionIndex - 1].incorrect_answers.d;
-      break;
+  if (questionIndex >= questions.length) {
+    fine();
+    return;
   }
-}
 
+  resetTimer();
+  difficulty.innerText = `Difficulty: ${questions[questionIndex].difficulty}`;
+  category.innerText = `Category: ${questions[questionIndex].category}`;
+  h2Question.innerText = questions[questionIndex].question;
+  questionNumber.innerText = questions[questionIndex].number;
+
+  const correctAnswer = questions[questionIndex].correct_answer;
+  const incorrectAnswers = questions[questionIndex].incorrect_answers;
+
+  const answers = [correctAnswer, ...incorrectAnswers];
+  const orderedAnswers = [
+    answers.find((a) => a.startsWith("A")),
+    answers.find((a) => a.startsWith("B")),
+    answers.find((a) => a.startsWith("C")),
+    answers.find((a) => a.startsWith("D")),
+  ];
+
+  ans1.innerText = orderedAnswers[0];
+  ans2.innerText = orderedAnswers[1];
+  ans3.innerText = orderedAnswers[2];
+  ans4.innerText = orderedAnswers[3];
+}
 function fine() {
   if (currentQuestion === questions.length || seconds === 0) {
+    localStorage.setItem("ansTrue", ansTrue);
     window.location.assign("results.html");
-    console.log(ansTrue);
   }
 }
 
 ans1.addEventListener("click", function () {
-  currentQuestion++;
-  fine();
   if (ans1.innerText === questions[currentQuestion].correct_answer) {
     ansTrue++;
   }
-
+  console.log("Risposta selezionata per la domanda:", currentQuestion);
+  localStorage.setItem("ansTrue", ansTrue);
+  currentQuestion++;
+  fine();
   updateQuestion(currentQuestion);
 });
 
 ans2.addEventListener("click", function () {
-  currentQuestion++;
-  fine();
   if (ans2.innerText === questions[currentQuestion].correct_answer) {
     ansTrue++;
   }
-
+  console.log("Risposta selezionata per la domanda:", currentQuestion);
+  localStorage.setItem("ansTrue", ansTrue);
+  currentQuestion++;
+  fine();
   updateQuestion(currentQuestion);
 });
 
 ans3.addEventListener("click", function () {
-  currentQuestion++;
-  fine();
   if (ans3.innerText === questions[currentQuestion].correct_answer) {
     ansTrue++;
   }
-
+  console.log("Risposta selezionata per la domanda:", currentQuestion);
+  localStorage.setItem("ansTrue", ansTrue);
+  currentQuestion++;
+  fine();
   updateQuestion(currentQuestion);
 });
 
 ans4.addEventListener("click", function () {
-  currentQuestion++;
-  fine();
   if (ans4.innerText === questions[currentQuestion].correct_answer) {
     ansTrue++;
   }
-
+  console.log("Risposta selezionata per la domanda:", currentQuestion);
+  localStorage.setItem("ansTrue", ansTrue);
+  currentQuestion++;
+  fine();
   updateQuestion(currentQuestion);
 });

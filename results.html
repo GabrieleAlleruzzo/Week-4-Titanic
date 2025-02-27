@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/Assets/css/style.css" />
-    <link rel="stylesheet" href="/Assets/css/welcome.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <title>Document</title>
   </head>
@@ -20,10 +19,10 @@
       <div class="column-container">
         <div class="column left align-left">
           <h2>Correct</h2>
-          <h2><strong>50%</strong></h2>
-          <p>4/6 questions</p>
+          <h2 id="percentage-left"><strong></strong></h2>
+          <p id="Correct"></p>
         </div>
-        <div class="column middle column-expanded">
+        <div class="column middle column expanded">
           <div class="graph-container">
             <canvas id="myChart"></canvas>
           </div>
@@ -38,15 +37,15 @@
         </div>
         <div class="column right align-right">
           <h2>Wrong</h2>
-          <h2><strong>50%</strong></h2>
-          <p>2/6 questions</p>
+          <h2 id="percentage-right"><strong></strong></h2>
+          <p id="Wrong"></p>
         </div>
       </div>
       <div class="center-center">
         <a href="/review.html"><button class="blue-button">RATE US</button></a>
       </div>
     </main>
-
+    <script src="./Assets/js/result.js"></script>
     <script>
       var xValues = ["Right", "Wrong"];
       var yValues = [55, 49];
