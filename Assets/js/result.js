@@ -38,6 +38,7 @@ chartCanvas.style.filter = "drop-shadow(0px 0px 20px rgba(0, 2, 46, 0.8))";
 new Chart("myChart", {
   type: "doughnut",
   data: {
+    labels: ["Wrong", "Correct"],
     datasets: [
       {
         backgroundColor: barColors,
@@ -50,7 +51,11 @@ new Chart("myChart", {
     cutoutPercentage: 70,
     title: {
       display: false,
+
       text: "Results",
+    },
+    legend: {
+      display: false,
     },
   },
 });
@@ -74,25 +79,3 @@ let esame = function (ans) {
   }
 };
 esame();
-
-/*if (ansTrueAvanza < 6) {
-  bocciato.innerText = "Failed!";
-} else {
-  bocciato.innerText = "Congratulations!";
-  console.log("ciao");
-}
-
-if (ansTrueAvanza < 6) {
-  azzurro.innnerText = "You not passed the exam.";console.log("ss");
-} else {
-  azzurro.innerText = "You passed the exam.";
-  
-}
-
-if (ansTrueAvanza < 6) {
-  descrizione.innerText = "Retry the exam for the qualification";
-} else {
-  descrizione.innerText = `We'll send you the certificate in a few minutes. check your email
-  (including promotions/spam folder)`;
-  console.log("ee");
-}*/
