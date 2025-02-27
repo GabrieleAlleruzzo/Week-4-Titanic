@@ -67,15 +67,19 @@ let descrizione = document.querySelector("p#descrizione");
 let esame = function (ans) {
   ans = ansTrueAvanza;
   if (ans < 6) {
-    azzurro.innerText = `You not passed the exam`;
-    bocciato.innerText = "Failed!";
+    azzurro.innerText = `You did not passed the quiz.
 
-    descrizione.innerText = "Retry the exam for the qualification";
+    YOU CAN'T PAY FOR EPICODE'S COURSE!`;
+    bocciato.innerText = "FAILED!";
+
+    descrizione.innerText =
+      "Don't worry and retake the quiz when you are more ready (in a few years)";
   } else {
     bocciato.innerText = "Congratulations!";
-    azzurro.innerText = "You passed the exam.";
-    descrizione.innerText = `We'll send you the certificate in a few minutes. check your email
-  (including promotions/spam folder)`;
+    azzurro.innerText = "You passed the QUIZ.";
+    descrizione.innerText = `We'll send you the certificate in a few minutes. 
+
+    YOU ARE A VERY GOOD PLAYER!`;
   }
 };
 esame();
